@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Shimming</title>
+		<script>
+			const modernBroswer = 'fetch' in window && 'assign' in Object
+			
+			if(!modernBroswer) {
+				const scriptElement = document.createElement('script')
+
+				scriptElement.async = false
+				scriptElement.src = '/polyfills.bundle.js'
+				document.head.appendChild(scriptElement)
+			}
+		</script>
+	</head>
+	<body>
+		<script src="index.bundle.js"></script>
+	</body>
+</html>
